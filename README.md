@@ -7,4 +7,8 @@ Project Smalls is an attempt to automate intelligence, operations and risk manag
 
 Phase 1 - TikiMon :: now a sub-project, but completely standalone and full of awesome.
 
-Phase 2 - ? 
+Phase 2 - Document what components of the project can interface with existing F/OSS tools
+
+Phase 3 - Intergration
+
+Phase 4 - Begin remaining tasks
