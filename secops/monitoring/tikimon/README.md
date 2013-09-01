@@ -1,8 +1,7 @@
 This is the home of Tikimon.
 
 project contributors:
-chris 
-george
+chris,george
 
 Current status:
 1. gnuradio
