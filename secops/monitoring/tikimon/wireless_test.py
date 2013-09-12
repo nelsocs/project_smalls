@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from scapy.all import *
-interface = 'mon0'
+interface = 'en1'
 probeReqs = []
 def sniffProbe(p):
    if p.haslayer(Dot11ProbeReq):
