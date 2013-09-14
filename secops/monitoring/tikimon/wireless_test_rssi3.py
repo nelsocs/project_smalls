@@ -1,14 +1,10 @@
-import sys
-from scapy.all import *
-
-interface='mon0'
-conf.iface=interface
-wlist=list()
-def sniffAP(p):
-	global wlist
-     if ( (p.haslayer(Dot11Beacon) or p.haslayer(Dot11ProbeResp))
-				and not ap.has key(p(Dot11).addr3)):
-	   ssid		= p[Dot11Elt].info
-	   bssid	= p[Dot11].addr3
-	   power	= p.sprintf("(PrismHeader:%PrismHeader.signal%)")
-	
+import socket
+rawSocket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.htons(0x0003))
+rawSocket.bind(("mon0", 0x0003))
+ap_list = set()
+while True :
+   pkt = rawSocket.recvfrom(2048)[0]
+   if pkt[26] == "\x80" :
+                 if pkt[36:42] not in ap_list and ord(pkt[63]) > 0:
+                         ap_list.add(pkt[36:42])
+                         print "SSID: %s AP MAC: %s" % (pkt[64:64 +ord(pkt[63])], pkt[36:42].encode('hex'))
