@@ -14,6 +14,8 @@ Current status:
 
 2. python wifi scripts
     a. explore python wifi scripts
-
+-- ADD: Mac address + resolution to AP
+-- ADD: BSSID
+-- ADD: syslog
 3. Twitter integration
 

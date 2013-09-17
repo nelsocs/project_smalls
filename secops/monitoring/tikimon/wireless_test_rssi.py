@@ -13,4 +13,8 @@ def sniffProbe(p):
      if netName not in probeReqs:
        probeReqs.append(netName)
        print '[+] Detected New Probe Request: ' + netName + ' signal: '  + power_src_str
+
+
+     if netName in probeReqs:
+       print '[+] Detected Additional Probe Request: ' + netName + ' signal: ' + power_src_str
 sniff(iface=interface, prn=lambda x:sniffProbe(x))
