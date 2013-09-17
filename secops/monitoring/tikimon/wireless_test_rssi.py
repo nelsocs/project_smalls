@@ -15,6 +15,7 @@ def sniffProbe(p):
        print '[+] Detected New Probe Request: ' + netName + ' signal: '  + power_src_str
 
 
-     if netName in probeReqs:
+     ##if netName in probeReqs:
+     if netName in probeReqs and not [None] :
        print '[+] Detected Additional Probe Request: ' + netName + ' signal: ' + power_src_str
 sniff(iface=interface, prn=lambda x:sniffProbe(x))
