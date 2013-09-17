@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
 from scapy.all import *
+import socket
+temp = sys.stdout
+sys.stdout = open('/var/log/tikimon.txt', 'w')
 interface = 'mon0'
 probeReqs = []
 def sniffProbe(p):
@@ -17,5 +20,9 @@ def sniffProbe(p):
 
      ##if netName in probeReqs:
      if netName in probeReqs and not [None] :
-       print '[+] Detected Additional Probe Request: ' + netName + ' signal: ' + power_src_str
+       print '[+] Detected Additional Probe Request: ' + netName + ' signal: ' + power_src_str ' + socket.gethostname()
 sniff(iface=interface, prn=lambda x:sniffProbe(x))
+
+sys.stdout.close()
+sys.stdout = temp
+
