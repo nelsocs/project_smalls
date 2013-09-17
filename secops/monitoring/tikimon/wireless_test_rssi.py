@@ -12,15 +12,16 @@ def sniffProbe(p):
      rPkt = p.getlayer(RadioTap)
      power_src = -(256-ord(p.notdecoded[-4:-3]))
      power_src_str = str(power_src)
+     probename = str(socket.gethostname())
 
      if netName not in probeReqs:
        probeReqs.append(netName)
-       print '[+] Detected New Probe Request: ' + netName + ' signal: '  + power_src_str
+       print '[+] Detected New Probe Request: ' + netName + ' signal: ' + power_src_str + ' probe: ' + probename
 
 
-     ##if netName in probeReqs:
-     if netName in probeReqs and not [None] :
-       print '[+] Detected Additional Probe Request: ' + netName + ' signal: ' + power_src_str ' + socket.gethostname()
+     if netName in probeReqs:
+     ##if netName in probeReqs and not [None] :
+       print '[+] Detected Additional Probe Request: ' + netName + ' signal: ' + power_src_str + ' probe: ' + probename
 sniff(iface=interface, prn=lambda x:sniffProbe(x))
 
 sys.stdout.close()
