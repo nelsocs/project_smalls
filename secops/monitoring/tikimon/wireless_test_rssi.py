@@ -2,8 +2,8 @@
 
 from scapy.all import *
 import socket
-temp = sys.stdout
-sys.stdout = open('/var/log/tikimon.txt', 'w')
+#temp = sys.stdout
+#sys.stdout = open('/var/log/tikimon.txt', 'w')
 interface = 'mon0'
 probeReqs = []
 def sniffProbe(p):
@@ -24,6 +24,6 @@ def sniffProbe(p):
        print '[+] Detected Additional Probe Request: ' + netName + ' signal: ' + power_src_str + ' probe: ' + probename
 sniff(iface=interface, prn=lambda x:sniffProbe(x))
 
-sys.stdout.close()
-sys.stdout = temp
+#sys.stdout.close()
+#sys.stdout = temp
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE detection-run SYSTEM "http://kismetwireless.net/kismet-3.1.0.dtd">
+
+<detection-run kismet-version="2013.03.R0" start-time="Wed Sep 18 20:44:09 2013">
+
+<card-source uuid="6740dae8-20d5-11e3-af1a-5b035b117a01">
+ <card-source>mon0:name=mon0,</card-source>
+ <card-name>mon0</card-name>
+ <card-interface>mon0</card-interface>
+ <card-type>ath9k</card-type>
+ <card-packets>0</card-packets>
+ <card-hop>true</card-hop>
+ <card-channels>1,5,9,13,2,6,10,3,7,11,4,8,12</card-channels>
+</card-source>
+</detection-run>
